@@ -24,6 +24,7 @@ cask "cleanshot"
 cask "discord"
 cask "fantastical"
 cask "figma"
+cask "fig"
 cask "notion"
 cask "sensei"
 cask "slack"
@@ -42,7 +43,7 @@ cask "visual-studio-code"
 cask "zoom"
 
 # Fonts
-cask "font-jetbrains-mono"
+cask "font-jetbrains-mono-nerd-font"
 
 # App Store
 mas "1Password for Safari", id: 1569813296
