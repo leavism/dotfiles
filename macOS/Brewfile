@@ -1,5 +1,6 @@
 # Taps
 tap "homebrew/cask-fonts"
+tap "homebrew/cask-versions"
 
 # terminal applications
 brew "exa"	# Modern replacement for ls
@@ -12,6 +13,7 @@ brew "pyenv"	# Python version manager
 brew "nvm"	# Node Version Manager
 brew "gh"	# GitHub CLI
 
+cask "arc"
 cask "adguard"
 cask "adobe-creative-cloud"
 cask "1password"
@@ -29,6 +31,7 @@ cask "notion"
 cask "sensei"
 cask "slack"
 cask "google-chrome"
+cask "firefox-develop-edition" # need to tap cask-versions
 cask "iina"
 cask "iterm2"
 cask "pixelsnap"
