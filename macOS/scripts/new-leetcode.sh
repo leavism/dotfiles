@@ -4,11 +4,11 @@
 read -p "Enter a LeetCode problem URL: " url
 
 # Extract the problem name from the URL
-problem_name=$(echo $url | sed -E 's/.+\/problems\/(.+)\//\1/')
-git_url=https://github.com/leavism-leetcode/$problem_name
+readonly problem_name=$(echo $url | sed -E 's/.+\/problems\/(.+)\//\1/')
+readonly git_url=https://github.com/leavism-leetcode/$problem_name
 
 # Check if the repository exists
-response=$(curl --write-out '%{http_code}' --silent --output /dev/null $git_url)
+readonly response=$(curl --write-out '%{http_code}' --silent --output /dev/null $git_url)
 if [ $response -eq 200 ]; then
     cd ~/repositories
     if [ -d $problem_name ]; then
