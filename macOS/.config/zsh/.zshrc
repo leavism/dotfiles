@@ -37,6 +37,7 @@ alias ll="exa -lGFh --git"
 alias lt="exa --tree --level=2"
 alias re="source ~/.zshrc"
 alias gpom="git push origin main"
+alias gpo="git push origin"
 alias gs="git status"
 alias ga="git add"
 
