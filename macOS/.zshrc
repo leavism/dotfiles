@@ -31,22 +31,12 @@ source /opt/homebrew/opt/antidote/share/antidote/antidote.zsh
 export STARSHIP_CONFIG=~/repositories/dotfiles/macOS/.config/starship.toml
 antidote load
 
-function ls() {
-    exa -lhb --icons "$@"
-}
+# Common commands
+alias ls="exa -1 --icons"
 
-function rs() {
-    omz reload
-}
-
-function leetcode() {
-    ~/repositories/dotfiles/macOS/scripts/new-leetcode.sh
-}
-
-function gc() {
-    ~/repositories/dotfiles/macOS/scripts/gc.sh
-}
-
+# Custom scripts
+alias leetcode="~/repositories/dotfiles/macOS/scripts/new-leetcode.sh"
+alias gc="~/repositories/dotfiles/macOS/scripts/gc.sh"
 
 # Fig post block. Keep at the bottom of this file.
 [[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.post.zsh"
