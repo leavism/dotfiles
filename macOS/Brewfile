@@ -5,6 +5,7 @@ tap "homebrew/cask-versions"
 # terminal applications
 brew "exa"	# Modern replacement for ls
 brew "ffmpeg"	# Multipurpose video & audio util
+brew "starship"
 brew "mas"	# MacOS App Store CLI
 brew "youtube-dl"	# Download videos
 
@@ -49,9 +50,7 @@ cask "zoom"
 cask "font-jetbrains-mono-nerd-font"
 
 # App Store
-mas "1Password for Safari", id: 1569813296
 mas "Compressor", id: 424390742
-mas "Craft", id: 1487937127
 mas "Fantastical", id: 975937182
 mas "Final Cut Pro", id: 424389933
 mas "Microsoft Excel", id: 462058435
@@ -62,4 +61,4 @@ mas "Microsoft Word", id: 462054704
 mas "Notability", id: 360593530
 mas "OneDrive", id: 823766827
 mas "QR Factory", id: 1609285899
-mas "Todoist", id: 585829637
+mas "Things 3", id: 904280696
