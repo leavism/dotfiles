@@ -36,7 +36,7 @@ conflicted = "[=](blink red)"
 diverged = "[󰯎](blink red) ${ahead_count}${behind_count}"
 up_to_date = "[](green)"
 untracked = "[?](dimmed text)"
-stashed = "[$](green)"
+stashed = '[\$](green)'
 modified = "[!](yellow)(yellow)"
 renamed = ""
 deleted =""
