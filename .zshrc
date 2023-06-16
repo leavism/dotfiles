@@ -40,6 +40,8 @@ alias gpom="git push origin main"
 alias gpo="git push origin"
 alias gs="git status"
 alias ga="git add"
+alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
+
 
 function gre() {
 	echo $#
