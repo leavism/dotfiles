@@ -1,18 +1,3 @@
-# 
-#  _______     ________       _       ______     ____    ____  ________  
-# |_   __ \   |_   __  |     / \     |_   _ `.  |_   \  /   _||_   __  | 
-#   | |__) |    | |_ \_|    / _ \      | | `. \   |   \/   |    | |_ \_| 
-#   |  __ /     |  _| _    / ___ \     | |  | |   | |\  /| |    |  _| _  
-#  _| |  \ \_  _| |__/ | _/ /   \ \_  _| |_.' /  _| |_\/_| |_  _| |__/ | 
-# |____| |___||________||____| |____||______.'  |_____||_____||________| 
-#                                                                        
-# 
-# Note
-# You don't have to copy this file over to the home directory. Just make a symlink with:
-# 
-# ln -s path/to/this/repo/file ~/.zshrc
-# 
-
 # Fig pre block. Keep at the top of this file.
 [[ -f "$HOME/.fig/shell/zshrc.pre.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.pre.zsh"
 
