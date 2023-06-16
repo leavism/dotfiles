@@ -35,6 +35,7 @@ if [[ -f "$input_file" ]]; then
 
         # Increment the seconds by a random number
         random_increment=$(generate_random_number 1920 6969)
+
         incremented_seconds=$((epoch_seconds + random_increment))
 
         # Calculate the updated date and time components
