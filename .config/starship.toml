@@ -50,6 +50,10 @@ symbol = " "
 symbol="󰎙"
 format='[\[](bold)[$symbol](bold green) [$version](bold green)[\]](bold)'
 
+[package]
+symbol=""
+format='[\[](bold)[$symbol](bold yellow) [$version](bold yellow)[\]](bold)'
+
 [python]
 symbol = " "
 
