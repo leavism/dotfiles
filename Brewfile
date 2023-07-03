@@ -37,7 +37,7 @@ cask "firefox-develop-edition" # need to tap cask-versions
 cask "iina"
 cask "iterm2"
 cask "pixelsnap"
-brew "macs-fan-control"
+cask "macs-fan-control"
 cask "microsoft-teams"
 cask "rectangle"
 cask "sip"
