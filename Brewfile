@@ -8,6 +8,7 @@ brew "ffmpeg"	# Multipurpose video & audio util
 brew "starship"
 brew "mas"	# MacOS App Store CLI
 brew "youtube-dl"	# Download videos
+brew "antidote"
 
 # Programming utils
 brew "pyenv"	# Python version manager
