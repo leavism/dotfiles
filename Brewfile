@@ -33,7 +33,7 @@ cask "notion"
 cask "sensei"
 cask "slack"
 cask "google-chrome"
-cask "firefox-develop-edition" # need to tap cask-versions
+cask "firefox-developer-edition" # need to tap cask-versions
 cask "iina"
 cask "iterm2"
 cask "pixelsnap"
