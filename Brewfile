@@ -3,7 +3,7 @@ tap "homebrew/cask-fonts"
 tap "homebrew/cask-versions"
 
 # terminal applications
-brew "exa"	# Modern replacement for ls
+brew "eza"	# Modern replacement for ls
 brew "ffmpeg"	# Multipurpose video & audio util
 brew "starship"
 brew "mas"	# MacOS App Store CLI
