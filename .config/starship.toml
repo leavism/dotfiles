@@ -1,64 +1,8 @@
 palette = "catppuccin_macchiato"
 
 [character]
-success_symbol = " [ ](mauve)"
-error_symbol = " [ ](red)"
-
-[aws]
-symbol = "  "
-
-[c]
-symbol = " "
-
-[directory]
-truncation_length = 7
-
-[hostname]
-ssh_only = true
-format = '[$hostname](bold underline green) '
-trim_at = "."
-disabled = false
-
-[username]
-style_user = "blue bold"
-style_root = "red bold"
-format = "[$user]($style) on "
-disabled = false
-show_always = false
-
-[git_branch]
-symbol = " "
-
-[git_status]
-ahead = "${count}"
-behind = "${count} [PULL NEEDED](blink red)"
-conflicted = "[=](blink red)"
-diverged = "[󰯎](blink red) ${ahead_count}${behind_count}"
-up_to_date = "[](green)"
-untracked = "[?](dimmed text)"
-stashed = '[\$](green)'
-modified = "[!](yellow)(yellow)"
-renamed = ""
-deleted =""
-staged = '[++\($count\)](green)'
-format='[\[](bold pink)$all_status$ahead_behind[\] ](bold pink)'
-
-[hg_branch]
-symbol = " "
-
-[nodejs]
-symbol="󰎙"
-format='[\[](bold)[$symbol](bold green) [$version](bold green)[\]](bold)'
-
-[package]
-symbol=""
-format='[\[](bold)[$symbol](bold yellow) [$version](bold yellow)[\]](bold)'
-
-[python]
-symbol = " "
-
-[rust]
-symbol = " "
+success_symbol = "[󰅂](mauve)"
+error_symbol = "[󰅂](red)"
 
 # Palette colors
 [palettes.catppuccin_macchiato]
