@@ -29,4 +29,14 @@ yabai -m config                                 \
     mouse_action2                resize         \
     mouse_drop_action            swap
 
+# blacklist apps
+yabai -m rule --add app="^Calculator$" manage=off
+yabai -m rule --add app="^System Settings$" manage=off
+yabai -m rule --add app="^Bartender 5$" manage=off
+yabai -m rule --add app="^Activity Monitor$" manage=off
+yabai -m rule --add app="^ColorSlurp$" manage=off
+yabai -m rule --add app="^App Store$" manage=off
+yabai -m rule --add app="^FaceTime$" manage=off
+yabai -m rule --add app="^Splashtop Business$" manage=off
+
 borders active_color=0xffCAD3F5 inactive_color=0xff474B61 width=2.0 2>/dev/null 1>&2 &
