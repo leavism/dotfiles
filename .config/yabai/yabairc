@@ -4,41 +4,76 @@ sudo yabai --load-sa
 
 # Configure Yabai settings
 yabai -m config \
-  mouse_follows_focus          on \
-  focus_follows_mouse          autoraise \
-  window_origin_display        default \
-  window_placement             second_child \
-  window_zoom_persist          on \
-  window_shadow                float \
-  window_animation_duration    0.0 \
-  window_animation_frame_rate  120 \
-  window_opacity_duration      0.0 \
-  active_window_opacity        1.0 \
-  normal_window_opacity        1.0 \
-  window_opacity               on \
-  insert_feedback_color        0xffd75f5f \
-  split_ratio                  0.50 \
-  split_type                   auto \
-  auto_balance                 off \
-  top_padding                  08 \
-  bottom_padding               08 \
-  left_padding                 08 \
-  right_padding                08 \
-  window_gap                   10 \
-  layout                       bsp \
-  mouse_modifier               alt \
-  mouse_action1                move \
-  mouse_action2                resize \
-  mouse_drop_action            swap
+	mouse_follows_focus on \
+	focus_follows_mouse autoraise \
+	window_origin_display default \
+	window_placement second_child \
+	window_zoom_persist on \
+	window_shadow float \
+	window_animation_duration 0.0 \
+	window_animation_frame_rate 120 \
+	window_opacity_duration 0.0 \
+	active_window_opacity 1.0 \
+	normal_window_opacity 1.0 \
+	window_opacity on \
+	insert_feedback_color 0xffd75f5f \
+	split_ratio 0.50 \
+	split_type auto \
+	auto_balance off \
+	top_padding 08 \
+	bottom_padding 08 \
+	left_padding 08 \
+	right_padding 08 \
+	window_gap 10 \
+	layout bsp \
+	mouse_modifier alt \
+	mouse_action1 move \
+	mouse_action2 resize \
+	mouse_drop_action swap
 
 # List of apps that will start in float
-blacklist=("System Settings" "Calculator" "Activity Monitor"	\ 
-					"FaceTime" "Splashtop Business" "Microsoft OneNote"	\
-					"Stickies")
+blacklist=("System Settings" "Calculator" "Activity Monitor"
+	"FaceTime" "Splashtop Business" "Microsoft OneNote"
+	"Stickies")
 
-for app in ${blacklist[@]}; do
-  yabai -m rule --add app=$app manage=off
+for app in "${blacklist[@]}"; do
+	yabai -m rule --add app="^($app)$" manage=off
 done
+
+# Spaces
+function setup_space {
+	local idx="$1"
+	local name="$2"
+	local space=
+	echo "setup space $idx : $name"
+
+	space=$(yabai -m query --spaces --space "$idx")
+	if [ -z "$space" ]; then
+		yabai -m space --create
+	fi
+
+	yabai -m space "$idx" --label "$name"
+}
+
+# Close current spaces to remake
+for _ in $(yabai -m query --spaces | jq '.[].index | select(. > 6)'); do
+	yabai -m space --destroy 7
+done
+
+setup_space 1 home
+setup_space 2 code
+setup_space 3 work
+setup_space 4 social
+setup_space 5 media
+setup_space 6 other
+
+# Moves apps to specific spaces
+yabai -m rule --add app="^iTerm$" space=^2
+yabai -m rule --add app="^Code$" space=^2
+yabai -m rule --add app="^Arc$" space=^3
+yabai -m rule --add app="^Splashtop Business$" space=^3
+yabai -m rule --add app="^Music$" space=^5
+yabai -m rule --add app="^YouTube$" space=^5
 
 # Setting border for active and inactive windows
 borders active_color=0xffCAD3F5 inactive_color=0xff474B61 width=3.0 2>/dev/null 1>&2 &
