@@ -40,6 +40,9 @@ for app in "${blacklist[@]}"; do
 	yabai -m rule --add app="^($app)$" manage=off
 done
 
+# Fig autocomplete configuration
+yabai -m rule --add app="^Fig$" sticky=on layer=above manage=off
+
 # Spaces
 function setup_space {
 	local idx="$1"
