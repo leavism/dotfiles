@@ -71,17 +71,15 @@ done
 setup_space 1 home
 setup_space 2 code
 setup_space 3 work
-setup_space 4 social
-setup_space 5 media
-setup_space 6 other
+setup_space 4 media
 
 # Moves apps to specific spaces
 yabai -m rule --add app="^iTerm$" space=^2
 yabai -m rule --add app="^Code$" space=^2
 yabai -m rule --add app="^Arc$" space=^3
 yabai -m rule --add app="^Splashtop Business$" space=^3
-yabai -m rule --add app="^Music$" space=^5
-yabai -m rule --add app="^YouTube$" space=^5
+yabai -m rule --add app="^Music$" space=^4
+yabai -m rule --add app="^YouTube$" space=^4
 
 # Setting border for active and inactive windows
 borders active_color=0xffCAD3F5 inactive_color=0xff474B61 width=3.0 2>/dev/null 1>&2 &
