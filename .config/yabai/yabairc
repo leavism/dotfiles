@@ -83,3 +83,6 @@ yabai -m rule --add app="^YouTube$" space=^4
 
 # Setting border for active and inactive windows
 borders active_color=0xffCAD3F5 inactive_color=0xff474B61 width=3.0 2>/dev/null 1>&2 &
+
+# get just the title of all Google Chrome windows
+# yabai -m query --windows | jq 'map(select(.app == "Google Chrome").title)'
