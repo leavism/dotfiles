@@ -1,9 +1,33 @@
 # float / unfloat window and center on screen
-shift + alt - space : yabai -m window --toggle float --grid 4:4:1:1:2:2
+shift + alt - space : \
+	yabai -m window --toggle float \
+	yabai -m window --grid 4:4:1:1:2:2 \
 
-# focus window
-# change window focus within space
+# Focus windows
 alt - j : yabai -m window --focus west
 alt - k : yabai -m window --focus south
 alt - l : yabai -m window --focus north
 alt - 0x29 : yabai -m window --focus east
+
+# Moving windows
+shift + alt - j : yabai -m window --warp west
+shift + alt - k : yabai -m window --warp north
+shift + alt - l : yabai -m window --warp south
+shift + alt - 0x29 : yabai -m window --warp east
+
+# Rotate windows clockwise and counterclockwise
+alt - r         : yabai -m space --rotate 270
+shift + alt - r : yabai -m space --rotate 90
+
+# Resize windows
+lctrl + alt - h : yabai -m window --resize left:-50:0; \
+                  yabai -m window --resize right:-50:0
+lctrl + alt - j : yabai -m window --resize bottom:0:50; \
+                  yabai -m window --resize top:0:50
+lctrl + alt - k : yabai -m window --resize top:0:-50; \
+                  yabai -m window --resize bottom:0:-50
+lctrl + alt - l : yabai -m window --resize right:50:0; \
+                  yabai -m window --resize left:50:0
+
+# Equalize size of windows
+lctrl + alt - e : yabai -m space --balance
