@@ -47,6 +47,7 @@ yabai -m rule --add app="^Homerow$" title="(General)" manage=off
 yabai -m rule --add app="^IINA$" manage=off
 yabai -m rule --add app="^IINA$" title="^$" grid=3:8:3:1:1:1
 yabai -m rule --add app="^Discord$" title="^(Discord Updater)$" grid=3:9:4:1:1:1 manage=off
+yabai -m rule --add app="^Homerow$" title="^(General|Clicking|Scrolling|Exceptions|About)$" manage=off
 
 # Spaces
 function setup_space {
