@@ -39,13 +39,15 @@ yabai -m rule --add label="App Store" app="^App Store$" manage=off
 yabai -m rule --add label="Activity Monitor" app="^Activity Monitor$" manage=off
 yabai -m rule --add label="Calculator" app="^Calculator$" manage=off
 yabai -m rule --add app="^Stickies$" manage=off
-yabai -m rule --add label="Dictionary" app="^Dictionary$" manage=off
+yabai -m rule --add app="^Dictionary$" manage=off
+yabai -m rule --add app="^FaceTime$" manage=off
 
 yabai -m rule --add label="OneNote" app="^Microsoft OneNote$" manage=off
 yabai -m rule --add label="Splashtop" app="^Splashtop Business$" manage=off
 yabai -m rule --add app="^Homerow$" title="(General)" manage=off
 yabai -m rule --add app="^IINA$" manage=off
 yabai -m rule --add app="^IINA$" title="^$" grid=3:8:3:1:1:1
+yabay -m rule --add app="^Raycast$" manage=off
 yabai -m rule --add app="^Discord$" title="^(Discord Updater)$" grid=3:9:4:1:1:1 manage=off
 yabai -m rule --add app="^Homerow$" title="^(General|Clicking|Scrolling|Exceptions|About)$" manage=off
 
@@ -81,9 +83,12 @@ yabai -m rule --add app="^Arc$" space=^3
 yabai -m rule --add app="^Splashtop Business$" space=^3
 yabai -m rule --add app="^Music$" space=^4
 yabai -m rule --add app="^YouTube$" space=^4
+yabai -m rule --add app="^Threads$" space=^4
+yabai -m rule --add app="^Discord$" title="^(Discord Updater)$" space=^4
+yabai -m rule --add app="^Discord$" space=^4
 
 # Setting border for active and inactive windows
-borders active_color=0xffCAD3F5 inactive_color=0xff474B61 width=3.0 2>/dev/null 1>&2 &
+borders active_color=0xffCAD3F5 inactive_color=0xff474B61 width=5.0 2>/dev/null 1>&2 &
 
 # get just the title of all Google Chrome windows
 # yabai -m query --windows | jq 'map(select(.app == "Google Chrome").title)'
