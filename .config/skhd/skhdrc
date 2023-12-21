@@ -20,14 +20,17 @@ alt - r         : yabai -m space --rotate 270
 shift + alt - r : yabai -m space --rotate 90
 
 # Resize windows
-lctrl + alt - h : yabai -m window --resize left:-50:0; \
+lctrl + alt - j : yabai -m window --resize left:-50:0; \
                   yabai -m window --resize right:-50:0
-lctrl + alt - j : yabai -m window --resize bottom:0:50; \
+lctrl + alt - k : yabai -m window --resize bottom:0:50; \
                   yabai -m window --resize top:0:50
-lctrl + alt - k : yabai -m window --resize top:0:-50; \
+lctrl + alt - l : yabai -m window --resize top:0:-50; \
                   yabai -m window --resize bottom:0:-50
-lctrl + alt - l : yabai -m window --resize right:50:0; \
+lctrl + alt - 0x29 : yabai -m window --resize right:50:0; \
                   yabai -m window --resize left:50:0
 
 # Equalize size of windows
 lctrl + alt - e : yabai -m space --balance
+
+# A hack pip toggle
+alt - p : yabai -m window --toggle border --toggle pip
