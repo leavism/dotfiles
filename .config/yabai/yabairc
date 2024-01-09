@@ -5,7 +5,7 @@ sudo yabai --load-sa
 # Configure Yabai settings
 yabai -m config \
 	mouse_follows_focus off \
-	focus_follows_mouse autofocus \
+	focus_follows_mouse off \
 	window_origin_display default \
 	window_placement second_child \
 	window_zoom_persist on \
@@ -47,7 +47,8 @@ yabai -m rule --add label="Splashtop" app="^Splashtop Business$" manage=off
 yabai -m rule --add app="^Homerow$" title="(General)" manage=off
 yabai -m rule --add app="^IINA$" manage=off
 yabai -m rule --add app="^IINA$" title="^$" grid=3:8:3:1:1:1
-yabay -m rule --add app="^Raycast$" manage=off
+yabai -m rule --add app="^Raycast$" manage=off
+yabai -m rule --add app="^Fantastical Helper$" title="^(Fantastical)$" manage=off
 yabai -m rule --add app="^Discord$" title="^(Discord Updater)$" grid=3:9:4:1:1:1 manage=off
 yabai -m rule --add app="^Homerow$" title="^(General|Clicking|Scrolling|Exceptions|About)$" manage=off
 
