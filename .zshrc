@@ -1,5 +1,7 @@
-# Fig pre block. Keep at the top of this file.
-[[ -f "$HOME/.fig/shell/zshrc.pre.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.pre.zsh"
+# For rustup
+. "$HOME/.cargo/env"
+
+alias devsh="cargo run --manifest-path=$HOME/repositories/automated-commenting-machine/Cargo.toml"
 
 # For nvm - node version manager.
 export NVM_DIR="$HOME/.nvm"
@@ -53,3 +55,11 @@ n ()
         rm -f "$NNN_TMPFILE" > /dev/null
     }
 }
+
+# pnpm
+export PNPM_HOME="/Users/leavism/Library/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
