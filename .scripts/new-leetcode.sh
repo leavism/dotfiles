@@ -4,40 +4,59 @@
 read -p "Enter a LeetCode problem URL: " url
 
 # Extract the problem name from the URL
-readonly problem_name=$(echo $url | sed -E 's/.+\/problems\/(.+)\//\1/')
+readonly problem_name=$(echo $url | sed -n 's#.*/problems/\([^/]*\)/.*#\1#p')
 readonly git_url=https://github.com/leavism-leetcode/$problem_name
 
 # Check if the repository exists
 readonly response=$(curl --write-out '%{http_code}' --silent --output /dev/null $git_url)
 if [ $response -eq 200 ]; then
-    cd ~/repositories
-    if [ -d $problem_name ]; then
-      cd $problem_name
-      code .
-    else
-      git clone https://github.com/leavism-leetcode/$problem_name.git && cd $problem_name
-      code .
-    fi
+	cd ~/repositories
+	if [ -d $problem_name ]; then
+		cd $problem_name
+		code .
+	else
+		git clone https://github.com/leavism-leetcode/$problem_name.git && cd $problem_name
+		code .
+	fi
 else
-  # Create a new directory with the given project name and cd into it
-  mkdir ~/repositories/$problem_name && cd "$_"
+	# Create a new directory for potential languages to use for the problem
+	echo $problem_name
+	mkdir -p ~/repositories/$problem_name && cd "$_"
+	readonly projectRoot=~/repositories/$problem_name
 
-  # Initialize a new Git repository
-  git init
+	mkdir python
+	mkdir rust
+	mkdir typescript
 
-  # Initialize a new Node.js project with npm
-  npm init -y
+	# Initialize a new Git repository
+	git init
 
-  # Install TypeScript and tsc-watch as dev dependencies
-  npm install --save-dev typescript tsc-watch
-  npm pkg set scripts.dev="tsc-watch --onSuccess \"node dist/index.js\""
+	echo '
+# Development files
+dist/
+node_modules/
 
-  # Create a basic src/index.ts file
-  mkdir src
-  echo 'console.log("Hello, world!");' > src/index.ts
+# Log files
+*.log
+' >.gitignore
 
-  # Create a basic tsconfig.json file for TypeScript
-  echo '{
+	# ======================
+	# Set up for typescript
+	cd $projectRoot/typescript
+
+	# Initialize a new Node.js project with npm
+	npm init -y
+
+	# Install TypeScript and tsc-watch as dev dependencies
+	npm install --save-dev typescript tsc-watch
+	npm pkg set scripts.dev="tsc-watch --onSuccess \"node dist/index.js\""
+
+	# Create a basic src/index.ts file
+	mkdir src
+	echo 'console.log("Hello, world!");' >src/index.ts
+
+	# Create a basic tsconfig.json file for TypeScript
+	echo '{
     "compilerOptions": {
       /* Language and Environment */
       "rootDir": "src",
@@ -54,28 +73,28 @@ else
       "skipLibCheck": true                                 /* Skip type checking all .d.ts files. */
     }
   }
-  ' > tsconfig.json
+  ' >tsconfig.json
+	# ======================
+	# Set up for python
+	cd $projectRoot/python
+	echo '# Copy/paste template from LeetCode below
 
-  echo '
-# Development files
-dist/
-node_modules/
 
-# Log files
-*.log
-' > .gitignore
-  
-  git branch -m master typescript
-  git add .gitignore package-lock.json package.json tsconfig.json src/
-  git commit -m "Initial commit"
+# After copy/pasting the template from LeetCode, uncomment the following to start testing.
+# solution = Solution()
+' >solution.py
 
-  gh repo create --public --source=. --push leavism-leetcode/$problem_name
+	# ======================
+	# Commit all the set up files
+	cd $projectRoot
+	git branch -m master main
+	git add .gitignore python/ typescript/ rust/
+	git commit -m "Initial commit"
 
-  # Output success message
-  echo "Project setup complete! You can now start developing your TypeScript project."
+	gh repo create --public --source=. --push leavism-leetcode/$problem_name
 
-  code .
-  code ./src/index.ts
+	# Output success message
+	echo "LeetCode environment has been set up."
 
-  # npm run dev
+	code .
 fi
