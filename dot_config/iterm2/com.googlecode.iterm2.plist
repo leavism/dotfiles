@@ -2,16 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>AppleAntiAliasingThreshold</key>
-	<integer>1</integer>
-	<key>ApplePressAndHoldEnabled</key>
-	<false/>
-	<key>AppleScrollAnimationEnabled</key>
-	<integer>0</integer>
-	<key>AppleSmoothFixedFontsSizeThreshold</key>
-	<integer>1</integer>
-	<key>AppleWindowTabbingMode</key>
-	<string>manual</string>
 	<key>Custom Color Presets</key>
 	<dict>
 		<key>Custom Catppuccin Mocha</key>
@@ -5535,7 +5525,7 @@
 			<key>Use Selected Text Color (Light)</key>
 			<true/>
 			<key>Use Separate Colors for Light and Dark Mode</key>
-			<true/>
+			<false/>
 			<key>Use Tab Color (Dark)</key>
 			<false/>
 			<key>Use Tab Color (Light)</key>
@@ -5602,13 +5592,13 @@
 				<key>Alpha Component</key>
 				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.36770021915435791</real>
+				<real>0.40725558996200562</real>
 				<key>Color Space</key>
 				<string>P3</string>
 				<key>Green Component</key>
-				<real>0.23528149724006653</real>
+				<real>0.31680914759635925</real>
 				<key>Red Component</key>
-				<real>0.91855239868164062</real>
+				<real>0.9218565821647644</real>
 			</dict>
 			<key>Ansi 1 Color (Dark)</key>
 			<dict>
@@ -5641,13 +5631,13 @@
 				<key>Alpha Component</key>
 				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.58431372549019611</real>
+				<real>0.59215686274509804</real>
 				<key>Color Space</key>
 				<string>P3</string>
 				<key>Green Component</key>
-				<real>0.85882352941176465</real>
+				<real>0.85490196078431369</real>
 				<key>Red Component</key>
-				<real>0.63137254901960782</real>
+				<real>0.52941176470588236</real>
 			</dict>
 			<key>Ansi 10 Color (Dark)</key>
 			<dict>
@@ -5680,13 +5670,13 @@
 				<key>Alpha Component</key>
 				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.43529411764705883</real>
+				<real>0.69378036260604858</real>
 				<key>Color Space</key>
 				<string>P3</string>
 				<key>Green Component</key>
-				<real>0.77647058823529413</real>
+				<real>0.99081128835678101</real>
 				<key>Red Component</key>
-				<real>0.92156862745098034</real>
+				<real>0.99831539392471313</real>
 			</dict>
 			<key>Ansi 11 Color (Dark)</key>
 			<dict>
@@ -5797,13 +5787,13 @@
 				<key>Alpha Component</key>
 				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.75686274509803919</real>
+				<real>0.75291329622268677</real>
 				<key>Color Space</key>
 				<string>P3</string>
 				<key>Green Component</key>
-				<real>0.81176470588235294</real>
+				<real>0.79717689752578735</real>
 				<key>Red Component</key>
-				<real>0.46666666666666667</real>
+				<real>0.55178546905517578</real>
 			</dict>
 			<key>Ansi 14 Color (Dark)</key>
 			<dict>
@@ -5875,13 +5865,13 @@
 				<key>Alpha Component</key>
 				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.40392156862745099</real>
+				<real>0.5727960467338562</real>
 				<key>Color Space</key>
 				<string>P3</string>
 				<key>Green Component</key>
-				<real>0.79607843137254897</real>
+				<real>0.89241707324981689</real>
 				<key>Red Component</key>
-				<real>0.47058823529411764</real>
+				<real>0.50113421678543091</real>
 			</dict>
 			<key>Ansi 2 Color (Dark)</key>
 			<dict>
@@ -5914,13 +5904,13 @@
 				<key>Alpha Component</key>
 				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.29411764705882354</real>
+				<real>0.57197654247283936</real>
 				<key>Color Space</key>
 				<string>P3</string>
 				<key>Green Component</key>
-				<real>0.72156862745098038</real>
+				<real>0.9849812388420105</real>
 				<key>Red Component</key>
-				<real>0.90588235294117647</real>
+				<real>0.9972572922706604</real>
 			</dict>
 			<key>Ansi 3 Color (Dark)</key>
 			<dict>
