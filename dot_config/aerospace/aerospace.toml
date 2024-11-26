@@ -46,7 +46,6 @@ automatically-unhide-macos-hidden-apps = false
 # check-further-callbacks = true
 # run = ['layout floating', 'move-node-to-workspace S']  # The callback itself
 
-
 # === Floating Windows ===
 [[on-window-detected]]
 if.app-name-regex-substring = 'raycast'
@@ -56,8 +55,22 @@ run = 'layout floating'
 if.app-name-regex-substring = 'finder'
 run = 'layout floating'
 
+[[on-window-detected]]
+if.app-id = 'com.apple.Passwords'
+run = 'layout floating'
+
+[[on-window-detected]]
+if.app-id = 'com.1password.1password'
+run = 'layout floating'
 
 # === Automove Windows to Workspaces ===
+# For reference, since aerospace does not support naminge workspaces yet
+# 1 - General
+# 2 - General
+# 3 - General
+# 4 - Social / Messaging
+# 5 - Email
+# 9 - Settings
 [[on-window-detected]]
 if.app-name-regex-substring = 'messages'
 run = 'move-node-to-workspace 4 --focus-follows-window'
@@ -65,6 +78,20 @@ run = 'move-node-to-workspace 4 --focus-follows-window'
 [[on-window-detected]]
 if.app-name-regex-substring = 'discord'
 run = 'move-node-to-workspace 4 --focus-follows-window'
+
+# Ideally workspace 5 is in the accordian layout
+[[on-window-detected]]
+if.app-id = 'com.microsoft.Outlook'
+run = 'move-node-to-workspace 5 --focus-follows-window'
+
+[[on-window-detected]]
+if.app-id = 'com.apple.mail'
+run = 'move-node-to-workspace 5 --focus-follows-window'
+
+[[on-window-detected]]
+if.app-id = 'com.apple.systempreferences'
+run = 'move-node-to-workspace 9 --focus-follows-window'
+
 
 # Possible values: (qwerty|dvorak)
 # See https://nikitabobko.github.io/AeroSpace/guide#key-mapping
@@ -152,6 +179,11 @@ alt-1 = 'workspace 1'
 alt-2 = 'workspace 2'
 alt-3 = 'workspace 3'
 alt-4 = 'workspace 4'
+alt-5 = 'workspace 5'
+alt-6 = 'workspace 6'
+alt-7 = 'workspace 7'
+alt-8 = 'workspace 8'
+alt-9 = 'workspace 9'
 
 # Move windows to workspaces
 # See: https://nikitabobko.github.io/AeroSpace/commands#move-node-to-workspace
@@ -159,6 +191,11 @@ alt-shift-1 = 'move-node-to-workspace 1 --focus-follows-window'
 alt-shift-2 = 'move-node-to-workspace 2 --focus-follows-window'
 alt-shift-3 = 'move-node-to-workspace 3 --focus-follows-window'
 alt-shift-4 = 'move-node-to-workspace 4 --focus-follows-window'
+alt-shift-5 = 'move-node-to-workspace 5 --focus-follows-window'
+alt-shift-6 = 'move-node-to-workspace 6 --focus-follows-window'
+alt-shift-7 = 'move-node-to-workspace 7 --focus-follows-window'
+alt-shift-8 = 'move-node-to-workspace 8 --focus-follows-window'
+alt-shift-9 = 'move-node-to-workspace 9 --focus-follows-window'
 
 alt-tab = 'workspace-back-and-forth'
 alt-shift-tab = 'move-workspace-to-monitor --wrap-around next'
