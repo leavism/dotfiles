@@ -10,10 +10,12 @@ export NVM_DIR="$HOME/.nvm"
   [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 
 # === Oh-My-Posh ===
-# Note: Keep this section last
+# Note: Keep this section last or near the end
 # The standard Apple terminal doesn't support ANSI characters, 
 # so we only initialize oh-my-posh for other terminal emulators.
 if [ "$TERM_PROGRAM" != "Apple_Terminal" ]; then
   eval "$(oh-my-posh init zsh \
   --config ~/.config/ohmyposh/config.toml)"
 fi
+
+eval "$(zoxide init --cmd cd zsh)"
