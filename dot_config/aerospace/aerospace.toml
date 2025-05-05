@@ -1,9 +1,7 @@
 # Remember to run the borders service
 # Homebrew: brew services start felixkratz/formulae/borders
 # Nix-darwin: It should be in darwin/common/default.nix
-exec-on-workspace-change = ['/bin/bash', '-c',
-  'exec-and-forget borders'
-]
+exec-on-workspace-change = ['/bin/bash', '-c', 'exec-and-forget borders']
 
 # Start AeroSpace at login
 start-at-login = true
@@ -119,11 +117,11 @@ preset = 'qwerty'
 #                 See: https://nikitabobko.github.io/AeroSpace/guide#assign-workspaces-to-monitors
 [gaps]
 inner.horizontal = 10
-inner.vertical =   10
-outer.left =       10
-outer.bottom =     10
-outer.top =        10
-outer.right =      10
+inner.vertical = 10
+outer.left = 10
+outer.bottom = 10
+outer.top = 10
+outer.right = 10
 
 # 'main' binding mode declaration
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
@@ -196,6 +194,15 @@ alt-6 = 'workspace 6'
 alt-7 = 'workspace 7'
 alt-8 = 'workspace 8'
 alt-9 = 'workspace 9'
+ctrl-alt-1 = 'workspace 11'
+ctrl-alt-2 = 'workspace 12'
+ctrl-alt-3 = 'workspace 13'
+ctrl-alt-4 = 'workspace 14'
+ctrl-alt-5 = 'workspace 15'
+ctrl-alt-6 = 'workspace 16'
+ctrl-alt-7 = 'workspace 17'
+ctrl-alt-8 = 'workspace 18'
+ctrl-alt-9 = 'workspace 19'
 
 # Move windows to workspaces
 # See: https://nikitabobko.github.io/AeroSpace/commands#move-node-to-workspace
@@ -208,7 +215,15 @@ alt-shift-6 = 'move-node-to-workspace 6 --focus-follows-window'
 alt-shift-7 = 'move-node-to-workspace 7 --focus-follows-window'
 alt-shift-8 = 'move-node-to-workspace 8 --focus-follows-window'
 alt-shift-9 = 'move-node-to-workspace 9 --focus-follows-window'
-
+ctrl-alt-shift-1 = 'move-node-to-workspace 11 --focus-follows-window'
+ctrl-alt-shift-2 = 'move-node-to-workspace 12 --focus-follows-window'
+ctrl-alt-shift-3 = 'move-node-to-workspace 13 --focus-follows-window'
+ctrl-alt-shift-4 = 'move-node-to-workspace 14 --focus-follows-window'
+ctrl-alt-shift-5 = 'move-node-to-workspace 15 --focus-follows-window'
+ctrl-alt-shift-6 = 'move-node-to-workspace 16 --focus-follows-window'
+ctrl-alt-shift-7 = 'move-node-to-workspace 17 --focus-follows-window'
+ctrl-alt-shift-8 = 'move-node-to-workspace 18 --focus-follows-window'
+ctrl-alt-shift-9 = 'move-node-to-workspace 19 --focus-follows-window'
 alt-tab = 'workspace-back-and-forth'
 alt-shift-tab = 'move-workspace-to-monitor --wrap-around next'
 
@@ -217,12 +232,41 @@ alt-shift-tab = 'move-workspace-to-monitor --wrap-around next'
 alt-shift-semicolon = 'mode service'
 alt-shift-enter = 'mode apps'
 
+# === Monitor Assignments ===
+# Assign workspaces for a dual monitor set up. Need to change if 
+# more monitors are added.
+[workspace-to-monitor-force-assignment]
+# Main monitor (left) gets workspaces 1-9
+1 = 'main'
+2 = 'main'
+3 = 'main'
+4 = 'main'
+5 = 'main'
+6 = 'main'
+7 = 'main'
+8 = 'main'
+9 = 'main'
+
+# Secondary monitor (right) gets workspaces 11-19
+11 = 'secondary'
+12 = 'secondary'
+13 = 'secondary'
+14 = 'secondary'
+15 = 'secondary'
+16 = 'secondary'
+17 = 'secondary'
+18 = 'secondary'
+19 = 'secondary'
+
 # === Service Binding Mode Declarations ===
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
 [mode.service.binding]
 esc = ['reload-config', 'mode main']
 r = ['flatten-workspace-tree', 'mode main'] # reset layout
-f = ['layout floating tiling', 'mode main'] # Toggle between floating and tiling layout
+f = [
+  'layout floating tiling',
+  'mode main',
+] # Toggle between floating and tiling layout
 backspace = ['close-all-windows-but-current', 'mode main']
 
 
