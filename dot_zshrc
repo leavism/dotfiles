@@ -3,6 +3,17 @@ source $HOME/.config/zsh/command_aliases.zsh
 source $HOME/.config/zsh/script_aliases.zsh
 source $HOME/.config/zsh/git_aliases.zsh
 
+# Set up fzf key bindings and fuzzy completion
+export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'
+  --color=fg:#CDD6F4,fg+:#d0d0d0,bg:-1,bg+:#313244
+  --color=hl:#F38BA8,hl+:#5fd7ff,info:#CBA6F7,marker:#B4BEFE
+  --color=prompt:#CBA6F7,spinner:#F5E0DC,pointer:#F5E0DC,header:#F38BA8
+  --color=border:#313244,label:#CDD6F4,query:#d9d9d9
+  --border="bold" --border-label="" --preview-window="border-rounded" --padding="1"
+  --margin="1" --prompt="> " --marker=">" --pointer="◆"
+  --separator="─" --scrollbar="│"'
+source <(fzf --zsh)
+
 # === Node Version Manager ===
 # Note: Paths below assume NVM was installed with homebrew
 export NVM_DIR="$HOME/.nvm"
