@@ -1,7 +1,29 @@
 return {
 	"folke/snacks.nvim",
-	---@type snacks.Config
+	priority = 1000,
+	lazy = false,
+	keys = {
+		{"<leader>n","", desc = "Notifications"},
+		{
+			"<leader>nd",
+			function()
+				require("snacks").notifier.hide()
+			end,
+			desc = "Dismiss All Notifications",
+		},
+		{
+			"<leader>nh",
+			function()
+				require("snacks").notifier.show_history()
+			end,
+			desc = "Notification History",
+		},
+	},
 	opts = {
+		notifier = {
+			enabled = true,
+			timeout = 3000,
+		},
 		dashboard = {
 			width = 60,
 			preset = {
