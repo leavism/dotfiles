@@ -20,7 +20,3 @@ vim.keymap.set("i", "<A-j>", "<Esc><cmd>m .-2<CR>==gi", { desc = "Move line up" 
 vim.keymap.set("n", "<A-k>", "<cmd>m .+1<CR>==", { desc = "Move line down" })
 vim.keymap.set("v", "<A-k>", ":m '>+1<CR>gv=gv", { desc = "Move selection down" })
 vim.keymap.set("i", "<A-k>", "<Esc><cmd>m .+1<CR>==gi", { desc = "Move line down" })
-
--- Bufferline Pick
-vim.keymap.set("n", "<leader>bg", ":BufferLinePick<CR>", { desc = "Switch to a tab" })
-vim.keymap.set("v", "<leader>bg", "<ESC>:BufferLinePick<CR>", { desc = "Switch to a tab" })
