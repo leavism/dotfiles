@@ -2,17 +2,41 @@
 source $HOME/.config/zsh/command_aliases.zsh
 source $HOME/.config/zsh/script_aliases.zsh
 source $HOME/.config/zsh/git_aliases.zsh
+source $HOME/.config/zsh/fzf-git.sh
 
 # Set up fzf key bindings and fuzzy completion
-export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'
+export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS"
   --color=fg:#CDD6F4,fg+:#d0d0d0,bg:-1,bg+:#313244
   --color=hl:#F38BA8,hl+:#5fd7ff,info:#CBA6F7,marker:#B4BEFE
   --color=prompt:#CBA6F7,spinner:#F5E0DC,pointer:#F5E0DC,header:#F38BA8
   --color=border:#313244,label:#CDD6F4,query:#d9d9d9
-  --border="bold" --border-label="" --preview-window="border-rounded" --padding="1"
-  --margin="1" --prompt="> " --marker=">" --pointer="◆"
-  --separator="─" --scrollbar="│"'
+  --border=none
+  --preview-window='border-rounded' 
+  --padding=1%
+  --margin=1% 
+  --prompt='> ' 
+  --marker='>' 
+  --pointer='◆'
+  --style=full
+  --layout=reverse
+  --height=80%
+  --preview='bat -p --color=always {}'"
 source <(fzf --zsh)
+
+ # fzf --style full \
+ #    --border none --padding 1,2 \
+ #    --border-label ' Demo ' --input-label ' Input ' --header-label ' File Type ' \
+ #    --bind 'result:transform-list-label:
+ #        if [[ -z $FZF_QUERY ]]; then
+ #          echo " $FZF_MATCH_COUNT items "
+ #        else
+ #          echo " $FZF_MATCH_COUNT matches for [$FZF_QUERY] "
+ #        fi
+ #        ' \
+ #    --bind 'focus:transform-preview-label:[[ -n {} ]] && printf " Previewing [%s] " {}' \
+ #    --bind 'focus:+transform-header:file --brief {} || echo "No file selected"' \
+ #    --bind 'ctrl-r:change-list-label( Reloading the list )+reload(sleep 2; git ls-files)' \
+
 
 # === Node Version Manager ===
 # Note: Paths below assume NVM was installed with homebrew
