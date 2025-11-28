@@ -37,6 +37,18 @@ source <(fzf --zsh)
  #    --bind 'focus:+transform-header:file --brief {} || echo "No file selected"' \
  #    --bind 'ctrl-r:change-list-label( Reloading the list )+reload(sleep 2; git ls-files)' \
 
+ # Yazi Alias
+ # Change directory on exit
+ # y to start yazi
+ # keymap q to quit and cd to cwd
+ # keymap Q to quit without moving to cwd
+ function y() {
+	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
+	yazi "$@" --cwd-file="$tmp"
+	IFS= read -r -d '' cwd < "$tmp"
+	[ -n "$cwd" ] && [ "$cwd" != "$PWD" ] && builtin cd -- "$cwd"
+	rm -f -- "$tmp"
+}
 
 # === Node Version Manager ===
 # Note: Paths below assume NVM was installed with homebrew
