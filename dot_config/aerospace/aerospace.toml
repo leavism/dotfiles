@@ -1,10 +1,10 @@
 # Remember to run the borders service
 # Homebrew: brew services start felixkratz/formulae/borders
 # Nix-darwin: It should be in darwin/common/default.nix
-exec-on-workspace-change = ['/bin/bash', '-c', 'exec-and-forget borders']
+exec-on-workspace-change = ['/bin/bash', '-c']
 
 # Start AeroSpace at login
-start-at-login = true
+start-at-login = false
 
 # Normalizations. See: https://nikitabobko.github.io/AeroSpace/guide#normalization
 enable-normalization-flatten-containers = true

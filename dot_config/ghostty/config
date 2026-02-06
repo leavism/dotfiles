@@ -439,8 +439,8 @@ freetype-load-flags = hinting,force-autohint,monochrome,autohint
 # 
 #   - macOS: titlebar tabs style is not updated when switching themes.
 # 
-theme = Catppuccin Mocha 
-
+theme = zenbones dark
+background = #292520
 # Background image for the terminal.
 # 
 # This should be a path to a PNG or JPEG file, other image formats are
